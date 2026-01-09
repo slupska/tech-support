@@ -20,11 +20,6 @@ public class ServiceIntegrationTest {
     @Autowired
     Storage storage;
 
-    @BeforeEach
-    void setUp() {
-
-    }
-
     @Test
     void changeStatus_UpdateTicketInStorage() {
         // GIVEN
