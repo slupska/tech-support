@@ -25,11 +25,7 @@ public class Storage {
     }
 
     public void removeTicket(int id) {
-        for (Ticket ticket : tickets) {
-            if (ticket.getId() == id) {
-                this.tickets.remove(ticket);
-            }
-        }
+        tickets.removeIf(t -> t.getId() == id);
     }
 
     public Optional<Ticket> getTicketByID(int id) {

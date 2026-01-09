@@ -4,28 +4,28 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Service {
-    private Storage ticketStorage;
+    private Storage storage;
 
     public Service(Storage ticketStorage) {
-        this.ticketStorage = ticketStorage;
+        this.storage = ticketStorage;
     }
 
     public void changeStatus(int id, String status) {
-        if (ticketStorage.getTicketByID(id).isEmpty()){//czy zmienić żeby nie było tyle razy getTicket...
+        if (storage.getTicketByID(id).isEmpty()){
             System.out.println("Ticket with id " + id + " not found");
         }
         else {
-            ticketStorage.getTicketByID(id).get().setStatus(status);
+            storage.getTicketByID(id).get().setStatus(status);
             System.out.println("Ticket with id " + id + " has been changed to " + status);
         }
     }
 
     public void changeAssignee(int id, String assignee) {
-        if(ticketStorage.getTicketByID(id).isEmpty()) {
+        if(storage.getTicketByID(id).isEmpty()) {
             System.out.println("Ticket with id " + id + " not found");
         }
         else {
-            ticketStorage.getTicketByID(id).get().setAssignee(assignee);
+            storage.getTicketByID(id).get().setAssignee(assignee);
             System.out.println("Ticket with id " + id + " has been assigned to " + assignee);
         }
     }

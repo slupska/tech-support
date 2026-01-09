@@ -49,10 +49,19 @@ public class Ticket {
         this.id = id;// czy do tego robić setter skoro id nie powinno się zmienic
     }
 
-    public void ticketToString() {
-        System.out.println("ID: " + id + "\nAssignee: " + assignee + "\nReporter: " + reporter + "\nStatus: "
-                + status + "\nTask Description: " + taskDescription);
+    @Override
+    public String toString() {
+        return "ID: " + id +
+                " Assignee: " + assignee +
+                " Reporter: " + reporter +
+                " Status: " + status +
+                " Task Description: " + taskDescription;
     }
+
+//    public String ticketToString() {
+//        return "ID: " + id + "Assignee: " + assignee + "Reporter: " + reporter + "Status: "
+//                + status + "Task Description: " + taskDescription;
+//    }
 }
 
 
